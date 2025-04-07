@@ -1,0 +1,22 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  17. ERROR CSS START
+/*----------------------------------------*/
+
+// Error page style
+.bd-error {
+    &__content {
+        margin-bottom: 35px;
+        h3 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            @media #{$xs,$sm}{
+                font-size: 30px;
+            }
+        }
+    }
+    &__thumb img {
+        margin-bottom: 40px;
+    }
+}

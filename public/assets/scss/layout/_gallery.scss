@@ -1,0 +1,162 @@
+@use '../utils' as *;
+
+
+/*----------------------------------------*/
+/*  20. GALLERY CSS START
+/*----------------------------------------*/
+
+// Gallery  style css
+
+.bd-gallery-active {
+	position: relative;
+	margin-right: -375px;
+}
+.bd-gallery {
+	&__bg {
+		position: absolute;
+		top: 17px;
+		left: -75px;
+		@media #{$xs,$sm}{
+			display: none;
+		}
+	}
+	&__image {
+		position: relative;
+		border-radius: 6px;
+		overflow: hidden;
+		&::before {
+			position: absolute;
+			content: "";
+			width: 100%;
+			height: 100%;
+			background-image: -moz-linear-gradient( 90deg, rgba(0,0,0,0.70196) 0%, rgba(0,0,0,0) 100%);
+			background-image: -webkit-linear-gradient( 90deg, rgba(0,0,0,0.70196) 0%, rgba(0,0,0,0) 100%);
+			background-image: -ms-linear-gradient( 90deg, rgba(0,0,0,0.70196) 0%, rgba(0,0,0,0) 100%);
+			opacity: 0;
+			z-index: 1;
+		}
+	}
+	&__content {
+		position: absolute;
+		bottom: -50px;
+		padding: 35px 40px;
+		opacity: 0;
+		visibility: hidden;
+		@include transition(.3s);
+		z-index: 3;
+		@media #{$xl,$md,$xs,$sm}{
+			padding: 30px 20px;
+		}
+		h3 {
+			a {
+				color: var(--clr-common-white);
+				margin-bottom: 12px;
+				display: block;
+				&:hover {
+					color: var(--clr-theme-1);
+				}
+			}
+		}
+		p {
+			color: var(--clr-common-white);
+			opacity: 0.6;
+			margin-bottom: 0;
+		}
+	}
+	&__item {
+		&:hover {
+			.bd-gallery__content {
+				opacity: 1;
+				visibility: visible;
+				bottom: 0;
+			}
+			.bd-gallery__image {
+				&::before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	&__slider-area {
+		margin-top: -200px;
+	}
+	&__action {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include transform(translate(-50%, -50%));
+		opacity: 0;
+		visibility: hidden;
+		z-index: 3;
+		a {
+			height: 50px;
+			width: 50px;
+			background: var(--clr-common-white);
+			text-align: center;
+			line-height: 50px;
+			display: inline-block;
+			@include border-radius(50%);
+			font-size: 20px;
+			&:hover {
+				background-color: var(--clr-theme-1);
+				color: var(--clr-common-white);
+			}
+		}
+	}
+	&__thumb {
+		position: relative;
+		overflow: hidden;
+		@include border-radius(6px);
+		img {
+			width: 100%;
+		}
+		&::before {
+			position: absolute;
+			content: "";
+			height: 100%;
+			width: 100%;
+			background-color: var(--clr-common-heading);
+			opacity: 0;
+			z-index: 2;
+		}
+	}
+}
+.bd-singel {
+	&__gallery {
+		&-item {
+			@include transition(.3s);
+			position: relative;
+			&:hover {
+				.bd-gallery__action {
+					opacity: 1;
+					visibility: visible;
+				}
+				.bd-gallery__thumb {
+					&::before {
+						opacity: 0.7;
+						visibility: visible;
+					}
+					img {
+						-webkit-transform: rotate(-2deg) scale(1.1);
+						-moz-transform: rotate(-2deg) scale(1.1);
+						-ms-transform: rotate(-2deg) scale(1.1);
+						-o-transform: rotate(-2deg) scale(1.1);
+						transform: rotate(-2deg) scale(1.1);
+					}
+				}
+			}
+		}
+		&__tumb {
+			position: relative;
+			&:before {
+				position: absolute;
+				content: "";
+				height: 100%;
+				width: 100%;
+				background-color: var(--clr-common-heading);
+				opacity: 0;
+			}
+		}
+	}
+}
+

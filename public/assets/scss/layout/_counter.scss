@@ -1,0 +1,56 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  15. COUNTER CSS START
+/*----------------------------------------*/
+
+// Counter style
+.bd-counter {
+    &__border {
+        border-top: 1px solid var(--clr-border-9);
+        padding-top: 56px;
+    }
+    &__title {
+        font-size: 16px;
+        font-weight: var(--bd-fw-sbold);
+        display: block;
+        text-transform: uppercase;
+    }
+    &__inner {
+        position: relative;
+        padding-bottom: 25px;
+        border-bottom: 1px solid var(--clr-border-8);
+        margin-bottom: 15px;
+        @include transition(.3s);
+        &.st-2 {
+            border-bottom: 1px solid var(--clr-border-19);
+        }
+    }
+    &__item  {
+        p {
+            color: var(--clr-text-2);
+        }
+        &:hover {
+            & .bd-counter {
+                &__inner {
+                    position: relative;
+                    border-bottom: 1px solid var(--clr-theme-1);
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+    &__number {
+        font-size: 60px;
+        line-height: 1;
+        font-weight: var(--bd-fw-bold);
+        font-family: var(--bd-ff-heading);
+        color: var(--clr-theme-1);
+    }
+    &__icon {
+        position: absolute;
+        top: 5px;
+        right: 0px;
+    }
+}
+

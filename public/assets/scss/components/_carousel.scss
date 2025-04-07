@@ -1,0 +1,236 @@
+
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  06. CAROUSEL CSS START
+/*----------------------------------------*/
+
+// Gallery navigation
+.bd-gallery__button {
+	@include flexbox();
+	gap: 20px;
+	flex-wrap: wrap;
+	justify-content: center;
+	@media #{$xs,$sm}{
+		justify-content: start;
+	}
+	button {
+		--border-color: var(--clr-border-7);
+		--border-weight: 2px;
+		--dash-size: 15px;
+		--gap-size: 10px;
+		position: relative;
+		height: 60px;
+		background: transparent;
+		display: inline-flex;
+		border-radius: 6px;
+		overflow: hidden;
+		padding: 0px 35px;
+		justify-content: space-evenly;
+		align-items: center;
+		font-size: 16px;
+		text-transform: uppercase;
+		font-weight: var(--bd-fw-sbold);
+		@include transition(.3s);
+		&:after {
+			@include transition(.6s);
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) top center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center left repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) bottom center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center right repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat;
+			background-size: var(--dash-size) var(--border-weight), calc(var(--dash-size) + var(--gap-size)) var(--border-weight), var(--dash-size) var(--border-weight), var(--border-weight) var(--dash-size), var(--border-weight) calc(var(--dash-size) + var(--gap-size)), var(--border-weight) var(--dash-size);
+		}
+	}
+}
+.bd-gallery__button button.active {
+	--border-color: var(--clr-theme-1);
+	background-color: var(--clr-theme-1);
+	color: var(--clr-common-white);
+	--border-weight: 1px;
+	--dash-size: 1px;
+	--gap-size: 2px;
+	@include transition(.3s);
+}
+
+// Gallery navigation
+.bd-gallery {
+  &__image {
+    @include border-radius(6px);
+  }
+}
+.bd-gallery {
+  &__navigatin {
+    display: flex;
+    gap: 25px;
+    position: absolute;
+    top: 15px;
+    right: 0;
+    z-index: 55;
+    @media #{$xs}{
+      display: none;
+    }
+    button {
+      --border-color: rgb(64, 74, 61);
+      --border-weight: 2px;
+      --dash-size: 12px;
+      --gap-size: 10px;
+      background-color: transparent;
+      position: relative;
+      display: inline-flex;
+      @include border-radius(6px);
+      overflow: hidden;
+      height: 50px;
+      width: 50px;
+      justify-content: space-evenly;
+      align-items: center;
+      &:after {
+        transition: all .6s ease;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) top center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center left repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) bottom center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center right repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat;
+        background-size: var(--dash-size) var(--border-weight), calc(var(--dash-size) + var(--gap-size)) var(--border-weight), var(--dash-size) var(--border-weight), var(--border-weight) var(--dash-size), var(--border-weight) calc(var(--dash-size) + var(--gap-size)), var(--border-weight) var(--dash-size);
+        opacity: 20%;
+      }
+      &:hover {
+        --border-color: var(--clr-theme-1);
+        --border-weight: 2px;
+        --dash-size: 15px;
+        --gap-size: 1px;
+        background-color: var(--clr-theme-1);
+        i{
+          color: var(--clr-common-white);
+        }
+      }
+    }
+  }
+}
+
+// Testimonial navigation
+.bd-testimonial {
+  &__navigatin {
+    position: absolute;
+    top: 20px;
+    z-index: 55;
+    right: 0;
+    @include flexbox();
+    gap: 20px;
+    @media #{$xs,$sm}{
+      display: none;
+    }
+    button {
+      --border-color: var(--clr-border-10);
+      --border-weight: 2px;
+      --dash-size: 12px;
+      --gap-size: 10px;
+      background-color: transparent;
+      position: relative;
+      display: inline-flex;
+
+      @include border-radius(6px);
+      overflow: hidden;
+      height: 50px;
+      width: 50px;
+      justify-content: space-evenly;
+      align-items: center;
+      &:after {
+        transition: all .6s ease;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) top center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center left repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) bottom center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center right repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat;
+        background-size: var(--dash-size) var(--border-weight), calc(var(--dash-size) + var(--gap-size)) var(--border-weight), var(--dash-size) var(--border-weight), var(--border-weight) var(--dash-size), var(--border-weight) calc(var(--dash-size) + var(--gap-size)), var(--border-weight) var(--dash-size);
+      }
+      &:hover {
+        --border-color: var(--clr-theme-1);
+        --border-weight: 2px;
+        --dash-size: 15px;
+        --gap-size: 1px;
+        background-color: var(--clr-theme-1);
+        i{
+          color: var(--clr-common-white);
+        }
+      }
+    }
+  }
+}
+// Features navigation
+.bd-product {
+  &__navigatin {
+    position: absolute;
+    right: 0;
+    top: -120px;
+    z-index: 55;
+    @include flexbox();
+    gap: 20px;
+    @media #{$xs,$sm}{
+      display: none;
+    }
+    &.s-2 {
+      button {
+        i {
+          color: var(--clr-common-white);
+          color: var(--clr-common-body-text);
+        }
+        &:hover {
+          i {
+            color: var(--clr-common-white);
+          }
+        }
+      }
+    }
+    button {
+      --border-color: var(--clr-border-10);
+      --border-weight: 2px;
+      --dash-size: 12px;
+      --gap-size: 10px;
+      background-color: transparent;
+      position: relative;
+      display: inline-flex;
+
+      @include border-radius(6px);
+      overflow: hidden;
+      height: 50px;
+      width: 50px;
+      justify-content: space-evenly;
+      align-items: center;
+      i {
+        color: var(--clr-common-white);
+      }
+      &:after {
+        transition: all .6s ease;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) top center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center left repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) bottom center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center right repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat;
+        background-size: var(--dash-size) var(--border-weight), calc(var(--dash-size) + var(--gap-size)) var(--border-weight), var(--dash-size) var(--border-weight), var(--border-weight) var(--dash-size), var(--border-weight) calc(var(--dash-size) + var(--gap-size)), var(--border-weight) var(--dash-size);
+      }
+      &:hover {
+        --border-color: var(--clr-theme-1);
+        --border-weight: 2px;
+        --dash-size: 15px;
+        --gap-size: 1px;
+        background-color: var(--clr-theme-1);
+        i{
+          color: var(--clr-common-white);
+        }
+      }
+    }
+  }
+}
+
+.bd-product__navigatin {
+
+}

@@ -1,0 +1,122 @@
+
+@use '../utils' as *;
+
+
+/*----------------------------------------*/
+/*  32.TESTIMONIAL CSS START
+/*----------------------------------------*/
+
+// Testimonial style
+.swiper-slide.swiper-slide-thumb-active .bd-testimonial__meta-text h4 {
+  color: var(--clr-common-body-text);
+}
+.swiper-slide.swiper-slide-thumb-active .bd-testimonial__meta-text {
+  opacity: 100%;
+}
+.bd-testimonial {
+  &__wrapper {
+    background: var(--clr-common-white);
+    padding: 43px 50px 40px 50px;
+    @include border-radius(6px);
+    @media #{$xl}{
+      padding: 43px 30px 40px 30px;
+    }
+    @media #{$lg,$md,$sm,$xs}{
+      padding: 38px 30px 35px 30px;
+    }
+  }
+  &__card {
+    background: var(--clr-common-body-text);
+    padding: 60px 50px 55px 50px;
+    @include border-radius(6px);
+    position: relative;
+    z-index: 1;
+  }
+  &__text {
+    p {
+      color: var(--clr-text-9);
+      font-weight: var(--bd-fw-sbold);
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      line-height: 1;
+    }
+  }
+  &__icon {
+    img {
+      margin-bottom: 19px;
+    }
+  }
+  &__count {
+    span {
+      font-size: 60px;
+      color: var(--clr-common-white);
+      font-weight: var(--bd-fw-bold);
+      font-family: var(--bd-ff-heading);
+      line-height: 1;
+    }
+  }
+  &__cercle {
+    &-1 {
+      border: 1px solid rgb(70, 82, 67);
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      z-index: -1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include transform(translate(-50%, -50%));
+    }
+    &-2 {
+      border: 1px solid rgb(70, 82, 67);
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      z-index: -1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include transform(translate(-50%, -50%));
+    }
+  }
+  &__meta {
+    &-text {
+      @include transition(.3s);
+      opacity: 40%;
+      span {
+        font-size: 14px;
+        color: var(--clr-text-2);
+        margin-bottom: 5px;
+        text-transform: uppercase;
+      }
+      h4 {
+        color: var(--clr-common-body-text);
+        font-weight: var(--bd-fw-bold);
+        @media #{$lg,$md,$sm}{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  &__content {
+    h3 {
+      font-size: 24px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+      @media #{$xl,$md}{
+        font-size: 22px;
+        margin-bottom: 20px;
+      }
+      @media #{$lg,$sm,$xs}{
+        font-size: 20px;
+      }
+    }
+  }
+  &__icon {
+    margin-bottom: 15px;
+    i {
+      font-size: 16px;
+      color: var(--clr-theme-1);
+    }
+  }
+}

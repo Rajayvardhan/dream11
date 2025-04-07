@@ -1,0 +1,26 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  03.BACKGROUND COLOR CSS START
+/*----------------------------------------*/
+
+/*--- Background color
+-----------------------------------------*/
+.white-bg {
+	background-color: var(--clr-common-white);
+}
+.black-bg {
+	background-color: var(--clr-common-black);
+}
+.pg-bg {
+	background-color: var(--clr-bg-pyrite-green);
+}
+.grey-bg {
+	background-color: var(--clr-bg-grey-1)
+}
+.green-bg-2 {
+	background-color: var(--clr-theme-1)
+}
+.green-bg {
+	background-color: var(--clr-bg-green);
+}

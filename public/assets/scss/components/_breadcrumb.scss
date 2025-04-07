@@ -1,0 +1,67 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  04. BREAADCRUMB CSS START
+/*----------------------------------------*/
+
+// Breadcrumb style
+.Breadcrumb {
+	&__height {
+		height: 450px;
+	}
+}
+.bd-breadcrumb {
+	&__menu {
+		margin-bottom: 13px;
+		ul {
+			@include flexbox();
+			gap: 25px;
+			li {
+				list-style: none;
+				position: relative;
+				line-height: 1;
+				&:not(:last-child) {
+					&:after {
+						display: inline-block;
+						content: "\f105";
+						position: absolute;
+						right: -16px;
+						top: 50%;
+						font-family: var(--bd-ff-fontawesome);
+						color: var(--clr-text-12);
+						font-size: 16px;
+						transform: translateY(-50%);
+					}
+				}
+				span {
+					font-size: 16px;
+					color: var(--clr-theme-2);
+					font-weight: var(--bd-fw-sbold);
+					text-transform: uppercase;
+					a {
+						color: var(--clr-common-white);
+						font-weight: var(--bd-fw-light);
+					}
+				}
+			  }
+		}
+	}
+}
+.bd-breadcrumb {
+	&__title {
+		& h2 {
+			font-size: 100px;
+			color: var(--clr-common-white);
+			line-height: 1;
+			@media #{$lg}{
+				font-size: 80px;
+			}
+			@media #{$md}{
+				font-size: 60px;
+			}
+			@media #{$xs,$sm}{
+				font-size: 45px;
+			}
+		}
+	}
+}

@@ -1,0 +1,93 @@
+@use  '../utils' as *;
+
+/*----------------------------------------*/
+/*  27. PROCESS  CSS START
+/*----------------------------------------*/
+
+.bd-process {
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		column-gap: 50px;
+		row-gap: 30px;
+		@media #{$lg,$md}{
+			grid-template-columns: repeat(3, 1fr);
+			row-gap: 30px;
+		}
+		@media #{$sm}{
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 30px;
+		}
+		@media #{$xs}{
+			grid-template-columns: repeat(1, 1fr);
+			column-gap: 30px;
+		}
+	}
+	&__item {
+		text-align: center;
+		&:nth-child(2n) {
+			margin-top: 40px;
+			@media #{$lg,$md,$sm,$xs}{
+				margin-top: 0px;
+			}
+		}
+	}
+	&__thumb {
+		position: relative;
+		margin-bottom: 35px;
+		max-width: 300px;
+		left: 50%;
+		@include transform(translateX(-50%));
+	}
+	&__number {
+		position: absolute;
+		top: 0;
+		right: 0;
+		span {
+			width: 60px;
+			height: 60px;
+			background-color: var(--clr-common-white);
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			@include border-radius(50%);
+			font-size: 16px;
+			font-weight: var(--bd-fw-sbold);
+			@include box-shadow (6px -12px 32px 0px rgba(0, 0, 0, 0.06));
+		}
+	}
+	&__content {
+		h4 {
+			font-weight: var(--bd-fw-bold);
+			margin-bottom: 10px;
+			@media #{$md,$sm}{
+				font-size: 18px;
+			}
+			a {
+				&:hover {
+					color: var(--clr-theme-1);
+				}
+			}
+		}
+		span {
+			text-transform: uppercase;
+			font-weight: var(--bd-fw-sbold);
+			color: var(--clr-text-11);
+		}
+	}
+	&__bg {
+		position: absolute;
+		left: 30px;
+		right: 40px;
+		top: 10%;
+		@media #{$sm,$md,$lg,$xl}{
+			top: 25%;
+		}
+		@media #{$xs}{
+			display: none;
+		}
+		img {
+			width: 100%;
+		}
+	}
+}

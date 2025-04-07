@@ -1,0 +1,17 @@
+
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  21. GOOGLE CSS START
+/*----------------------------------------*/
+
+// Google map style
+.bd-google {
+	&__map {
+		iframe {
+			width: 100%;
+			min-height: 570px;
+			@include border-radius(6PX);
+		}
+	}
+}

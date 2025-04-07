@@ -1,0 +1,125 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  14. CONTACT CSS START
+/*----------------------------------------*/
+
+// Contact style
+.bd-conatact {
+    &__info {
+        --border-color: var(--clr-border-7);
+        --border-weight: 2px;
+        --dash-size: 15px;
+        --gap-size: 10px;
+        position: relative;
+        padding: 45px 45px 42px;
+        @include border-radius(6px);
+        @include transition(.3s);
+        overflow: hidden;
+        @media #{$xs,$xl}{
+            padding: 45px 20px 42px;
+        }
+        &:after {
+            transition: all 0.6s ease;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) top center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center left repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) bottom center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center right repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat;
+            background-size: var(--dash-size) var(--border-weight), calc(var(--dash-size) + var(--gap-size)) var(--border-weight), var(--dash-size) var(--border-weight), var(--border-weight) var(--dash-size), var(--border-weight) calc(var(--dash-size) + var(--gap-size)), var(--border-weight) var(--dash-size);
+            z-index: -1;
+        }
+        &:hover {
+            &::after {
+                --border-color: var(--clr-common-body-text);
+            }
+        }
+        &-icon {
+            height: 120px;
+            width: 120px;
+            display: inline-block;
+            background-color: var(--clr-theme-1);
+            text-align: center;
+            line-height: 120px;
+            border-radius: 50%;
+            margin-bottom: 35px;
+        }
+        &-content {
+            h3 {
+                margin-bottom: 10px;
+                @media #{$xs,$xl}{
+                    font-size: 22px;
+                }
+            }
+            span {
+                display: block;
+                color: var(--clr-text-2);
+                a {
+                    &:hover {
+                        color: var(--clr-theme-1);
+                    }
+                }
+            }
+        }
+    }
+}
+// Contact form style
+.bd-contact {
+    &__wrapper {
+        padding-left: 50px;
+        @media #{$xs,$sm,$md,$lg}{
+            padding-left: 0;
+        }
+        @media #{$xl}{
+            padding-left: 30px;
+        }
+    }
+    &__main {
+        background: var(--clr-bg-grey-2);
+        padding: 50px 80px 20px 50px;
+        @include border-radius(6px);
+        @media #{$xs,$sm,$md,$lg}{
+            padding: 50px 30px 20px 30px;
+        }
+    }
+    &__input {
+        position: relative;
+        input {
+            width: 100%;
+            height: 60px;
+            background: var(--clr-common-white);
+            border: 0;
+            @include border-radius(6px);
+            padding: 0 25px 0 50px;
+        }
+        i {
+            position: absolute;
+            top: 22px;
+            left: 20px;
+            color: var(--clr-theme-1);
+        }
+        textarea {
+            height: 150px;
+            width: 100%;
+            border: 0;
+            @include border-radius(6px);
+            resize: none;
+            outline: none;
+            padding: 17px 25px 17px 50px;
+        }
+        ::placeholder {
+            color: var(--clr-common-placeholder-3);
+            opacity: 1;
+            font-size: 16px;
+        }
+        ::-moz-placeholder {
+            color: var(--clr-common-placeholder-3);
+            opacity: 1;
+            font-size: 16px;
+        }
+    }
+
+}
+

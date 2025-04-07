@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/logoNew.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logoNew.png" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+  
+
+  <link rel="stylesheet" href="../public/assets/css/all.min.css">
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>Real Ludo King</title>
+</head>
+
+<body class="mainbg02 ">
+  <div id="preloader02" >
+    <div>
+        <!-- <img class="mainemagelive" src="./static/media/Realludokinglogo.png" alt=""> -->
+        <video style="width: 100%;" src="./static/media/main.mp4"></video>
+    </div>
+   
+  </div>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+<div class="content02">
+   
+  <div id="root"></div>
+  <iframe id="ifmcontentstoprint" style="height: 0 px; width: 0px; position: absolute"></iframe>
+  <!-- <div class="rightContainer"  style="position: fixed; top: 0px; bottom: 0px; left: 490px; z-index: 5;"><div class="rcBanner flex-center"><picture class="rcBanner-img-container"><img  src="./static/media/Realludokinglogo.png" alt=""></picture><div class="rcBanner-text">Play Ludo &amp; <span class="rcBanner-text-bold">Win Real Cash!</span></div><div class="rcBanner-footer">For best experience, open&nbsp;<a href="/">RealLudoKing.com</a>&nbsp;on&nbsp;&nbsp;chrome mobile</div></div></div> -->
+
+</div>
+
+<script>
+  const loadingTime = 2500;
+ document.getElementById('preloader02').style.display = 'block';
+ setTimeout(() => {
+   document.getElementById('preloader02').style.display = 'none';
+   document.querySelector('.content02').style.display = 'block';
+ }, loadingTime);
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+
+  <script src="./assets/js/fontawesome.min.js"></script>
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  <!-- our aos data -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+  AOS.init({
+      offset: 600,
+      duration: 400,
+  });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  10. SECTION TITLE CSS START
+/*----------------------------------------*/
+
+// Section title style
+.bd-sub {
+	&__title {
+		font-size: 14px;
+		font-weight: var(--bd-fw-sbold);
+		color: var(--clr-theme-1);
+		display: block;
+		margin-bottom: 10px;
+		line-height: 1;
+		&.s-2 {
+			color: var(--clr-theme-2);
+		}
+	}
+}
+.bd-section {
+	&__title {
+		font-size: 60px;
+		color: var(--clr-common-body-text);
+		line-height: 1.2;
+		@media #{$xl}{
+			font-size: 50px;
+		}
+		@media #{$md,$lg}{
+			font-size: 45px;
+		}
+		@media #{$sm}{
+			font-size: 40px;
+		}
+		@media #{$xs}{
+			font-size: 30px;
+			br {
+				display: none;
+			}
+		}
+		&.s-2 {
+			letter-spacing: -2px;
+		}
+		&.s-3 {
+			color: var(--clr-common-white);
+		}
+		&.white {
+			color: var(--clr-common-white);
+		}
+	}
+	&__paragraph {
+		font-size: 18px;
+	}
+}
+
+

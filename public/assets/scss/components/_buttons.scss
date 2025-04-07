@@ -1,0 +1,574 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  05. BUTTTON CSS START
+/*----------------------------------------*/
+
+// Hero btn style
+.bd-hero__btn-1 {
+	height: 60px;
+	display: inline-flex;
+	background-color: var(--clr-theme-2);
+	padding: 0 35px;
+	align-items: center;
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: var(--bd-fw-sbold);
+	@include border-radius(6px);
+	&:hover {
+		background-image: repeating-linear-gradient(12deg, #fff, #fff 17px, transparent 17px, transparent 24px, #fff 24px), repeating-linear-gradient(102deg, #fff, #fff 17px, transparent 17px, transparent 24px, #fff 24px), repeating-linear-gradient(192deg, #fff, #fff 17px, transparent 17px, transparent 24px, #fff 24px), repeating-linear-gradient(282deg, #fff, #fff 17px, transparent 17px, transparent 24px, #fff 24px);
+		background-size: 1px calc(100% + 24.54px), calc(100% + 24.54px) 1px, 1px calc(100% + 24.54px) , calc(100% + 24.54px) 1px;
+		background-position: 0 0, 0 0, 100% 0, 0 100%;
+		background-repeat: no-repeat;
+		animation: borderAnimation 1.5s infinite linear;
+		background-color: transparent;
+		color: var(--clr-common-white);
+	}
+}
+.bd-hero__btn-2 {
+	height: 58px;
+	display: inline-flex;
+	padding: 0 40px;
+	align-items: center;
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: var(--bd-fw-sbold);
+	@include border-radius(6px);
+	background-image: repeating-linear-gradient(12deg, #fff, #fff 17px, transparent 17px, transparent 24px, #fff 24px), repeating-linear-gradient(102deg, #fff, #fff 17px, transparent 17px, transparent 24px, #fff 24px), repeating-linear-gradient(192deg, #fff, #fff 17px, transparent 17px, transparent 24px, #fff 24px), repeating-linear-gradient(282deg, #fff, #fff 17px, transparent 17px, transparent 24px, #fff 24px);
+	background-size: 1px calc(100% + 24.54px), calc(100% + 24.54px) 1px, 1px calc(100% + 24.54px) , calc(100% + 24.54px) 1px;
+	background-position: 0 0, 0 0, 100% 0, 0 100%;
+	background-repeat: no-repeat;
+	animation: borderAnimation 1.5s infinite linear;
+	color: var(--clr-common-white);
+	&:hover {
+		background-color: var(--clr-theme-2);
+		background-image: none;
+	}
+}
+@keyframes borderAnimation { from { background-position: 0 0, -13.46px 0, 100% -13.46px, 0 100%; } to { background-position: 0 -13.46px, 0 0, 100% 0, -13.46px 100%; } } 
+
+.bd-hero__btn-3 {
+	vertical-align: middle;
+	@include transform (perspective(1px) translateZ(0));
+	position: relative;
+	-webkit-transition-property: color;
+	transition-property: color;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	height: 60px;
+	background-color: var(--clr-theme-1);
+	display: inline-flex;
+	align-items: center;
+	padding: 0 40px;
+	font-size: 16px;
+	font-weight: var(--bd-fw-sbold);
+	color: var(--clr-common-white);
+	text-transform: uppercase;
+	@include border-radius(6px);
+	&::after {
+		top: 0;
+		left: 0;
+		content: "";
+		z-index: -4;
+		width: 100%;
+		height: 100%;
+		visibility: hidden;
+		position: absolute;
+		-webkit-transform-origin: 0 0;
+		transform-origin: 0 0;
+		@include transform (scaleX(0));
+		border-radius: 5px;
+		background: var(--clr-theme-2);
+		@include transition (.5s);
+	}
+	&:hover {
+		&::after {
+			width: 100%;
+			@include transform (scaleX(1));
+			visibility: visible;
+			-webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+			transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+		}
+	}
+}
+.bd-hero__btn-4 {
+	vertical-align: middle;
+	@include transform (perspective(1px) translateZ(0));
+	position: relative;
+	-webkit-transition-property: color;
+	transition-property: color;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	height: 60px;
+	background-color: var(--clr-theme-2);
+	display: inline-flex;
+	align-items: center;
+	padding: 0 40px;
+	font-size: 16px;
+	font-weight: var(--bd-fw-sbold);
+	text-transform: uppercase;
+	@include border-radius(6px);
+	 i {
+		margin-left: 15px;
+	}
+	&::after {
+		top: 0;
+		left: 0;
+		content: "";
+		z-index: -4;
+		width: 100%;
+		height: 100%;
+		visibility: hidden;
+		position: absolute;
+		-webkit-transform-origin: 0 0;
+		transform-origin: 0 0;
+		@include transform (scaleX(0));
+		@include  border-radius(6px);
+		background: var(--clr-theme-1);
+		@include transition (.5s);
+	}
+	&:hover {
+		&::after {
+			width: 100%;
+			@include transform (scaleX(1));
+			visibility: visible;
+			-webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+			transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+		}
+		color: var(--clr-common-white);
+	}
+}
+// Link  btn style
+.bd-link__btn {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: var(--bd-fw-sbold);
+	&:hover {
+		color: var(--clr-theme-1);
+	}
+}
+.bd-link__btn-2 {
+	font-size: 16px;
+	font-weight: var(--bd-fw-sbold);
+	color: var(--clr-text-6);
+	text-transform: uppercase;
+	&:hover{
+		color: var(--clr-theme-1);
+	}
+}
+// Theme btn style
+.bd-theme__btn-1 {
+	--border-color: rgb(64, 74, 61);
+	--border-weight: 2px;
+	--dash-size: 15px;
+	--gap-size: 10px;
+	position: relative;
+	height: 60px;
+	background: transparent;
+	display: inline-flex;
+	@include  border-radius(6px);
+	overflow: hidden;
+	padding: 0px 35px;
+	justify-content: space-evenly;
+	align-items: center;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: 600;
+	&:after {
+		transition: all .6s ease;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) top center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center left repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) bottom center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center right repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat;
+		background-size: var(--dash-size) var(--border-weight), calc(var(--dash-size) + var(--gap-size)) var(--border-weight), var(--dash-size) var(--border-weight), var(--border-weight) var(--dash-size), var(--border-weight) calc(var(--dash-size) + var(--gap-size)), var(--border-weight) var(--dash-size);
+		opacity: 20%;
+	}
+	&:hover {
+		--border-color: var(--clr-theme-2);
+		background-color: var(--clr-theme-2);
+		--border-weight: 1px;
+		--dash-size: 1px;
+		--gap-size: 2px;
+	}
+}
+.bd-theme__btn-2 {
+	--border-color: var(--clr-theme-2);
+	background-color: var(--clr-theme-2);
+	--border-weight: 2px;
+	--dash-size: 15px;
+	--gap-size: 1px;
+	position: relative;
+	height: 60px;
+	display: inline-flex;
+	@include  border-radius(6px);
+	overflow: hidden;
+	padding: 0px 35px;
+	justify-content: space-evenly;
+	align-items: center;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: var(--bd-fw-sbold);
+	&:after {
+		transition: all .6s ease;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) top center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center left repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) bottom center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center right repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat;
+		background-size: var(--dash-size) var(--border-weight), calc(var(--dash-size) + var(--gap-size)) var(--border-weight), var(--dash-size) var(--border-weight), var(--border-weight) var(--dash-size), var(--border-weight) calc(var(--dash-size) + var(--gap-size)), var(--border-weight) var(--dash-size);
+		opacity: 20%;
+	}
+	&:hover {
+		--border-color: rgb(64, 74, 61);
+		--border-weight: 2px;
+		--dash-size: 15px;
+		--gap-size: 10px;
+		background-color: transparent;
+		&::after {
+			opacity: 20%;
+		}
+	}
+}
+.bd-theme__btn-3 {
+	--border-color: var(--clr-theme-2);
+	background-color: var(--clr-theme-2);
+	--border-weight: 2px;
+	--dash-size: 15px;
+	--gap-size: 1px;
+	position: relative;
+	height: 60px;
+	display: inline-flex;
+	@include  border-radius(6px);
+	overflow: hidden;
+	padding: 0px 35px;
+	justify-content: space-evenly;
+	align-items: center;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: var(--bd-fw-sbold);
+	&:after {
+		transition: all .6s ease;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) top center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center left repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) bottom center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center right repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat;
+		background-size: var(--dash-size) var(--border-weight), calc(var(--dash-size) + var(--gap-size)) var(--border-weight), var(--dash-size) var(--border-weight), var(--border-weight) var(--dash-size), var(--border-weight) calc(var(--dash-size) + var(--gap-size)), var(--border-weight) var(--dash-size);
+	}
+	&:hover {
+		--border-color: var(--clr-footer-1);
+		--border-weight: 2px;
+		--dash-size: 15px;
+		--gap-size: 10px;
+		background-color: transparent;
+		color: var(--clr-footer-1);
+	}
+}
+.bd-theme__btn-4 {
+	--border-color: var(--clr-border-7);
+	--border-weight: 2px;
+	--dash-size: 15px;
+	--gap-size: 10px;
+	position: relative;
+	height: 60px;
+	background: transparent;
+	display: inline-flex;
+	@include  border-radius(6px);
+	overflow: hidden;
+	padding: 0px 35px;
+	justify-content: space-evenly;
+	align-items: center;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: var(--bd-fw-sbold);
+	&:after {
+		transition: all .6s ease;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) top center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center left repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) bottom center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center right repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat;
+		background-size: var(--dash-size) var(--border-weight), calc(var(--dash-size) + var(--gap-size)) var(--border-weight), var(--dash-size) var(--border-weight), var(--border-weight) var(--dash-size), var(--border-weight) calc(var(--dash-size) + var(--gap-size)), var(--border-weight) var(--dash-size);
+	}
+	&:hover {
+		--border-color: var(--clr-theme-2);
+		background-color: var(--clr-theme-2);
+		--border-weight: 1px;
+		--dash-size: 1px;
+		--gap-size: 2px;
+	}
+}
+.bd-theme__btn-5 {
+	--border-color: var(--clr-theme-2);
+	background-color: var(--clr-theme-2);
+	--border-weight: 2px;
+	--dash-size: 15px;
+	--gap-size: 1px;
+	position: relative;
+	height: 60px;
+	display: inline-flex;
+	@include  border-radius(6px);
+	overflow: hidden;
+	padding: 0px 35px;
+	justify-content: space-evenly;
+	align-items: center;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: var(--bd-fw-sbold);
+	&:after {
+		transition: all .6s ease;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) top center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center left repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) bottom center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center right repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat;
+		background-size: var(--dash-size) var(--border-weight), calc(var(--dash-size) + var(--gap-size)) var(--border-weight), var(--dash-size) var(--border-weight), var(--border-weight) var(--dash-size), var(--border-weight) calc(var(--dash-size) + var(--gap-size)), var(--border-weight) var(--dash-size);
+		opacity: 40%;
+	}
+	&:hover {
+		--border-color: var(--clr-common-white);
+		--border-weight: 2px;
+		--dash-size: 15px;
+		--gap-size: 10px;
+		background-color: transparent;
+		color: var(--clr-common-white);
+	}
+}
+.bd-theme__btn-6 {
+	--border-color: var(--clr-border-7);
+	--border-weight: 2px;
+	--dash-size: 15px;
+	--gap-size: 10px;
+	position: relative;
+	height: 60px;
+	background: transparent;
+	display: inline-flex;
+	@include  border-radius(6px);
+	overflow: hidden;
+	padding: 0px 35px;
+	justify-content: space-evenly;
+	align-items: center;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: var(--bd-fw-sbold);
+	color: var(--clr-common-white);
+	&:after {
+		transition: all .6s ease;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) top center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center left repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) bottom center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center right repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat;
+		background-size: var(--dash-size) var(--border-weight), calc(var(--dash-size) + var(--gap-size)) var(--border-weight), var(--dash-size) var(--border-weight), var(--border-weight) var(--dash-size), var(--border-weight) calc(var(--dash-size) + var(--gap-size)), var(--border-weight) var(--dash-size);
+		opacity: 40%;
+	}
+	&:hover {
+		--border-color: var(--clr-theme-2);
+		background-color: var(--clr-theme-2);
+		--border-weight: 1px;
+		--dash-size: 1px;
+		--gap-size: 2px;
+	}
+}
+.bd-theme__btn-7 {
+	--border-color: var(--clr-border-7);
+	--border-weight: 2px;
+	--dash-size: 15px;
+	--gap-size: 10px;
+	position: relative;
+	height: 60px;
+	background: transparent;
+	display: inline-flex;
+	@include  border-radius(6px);
+	overflow: hidden;
+	padding: 0px 35px;
+	justify-content: space-evenly;
+	align-items: center;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: var(--bd-fw-sbold);
+	&:after {
+		transition: all .6s ease;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) top center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center left repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) bottom center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center right repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat;
+		background-size: var(--dash-size) var(--border-weight), calc(var(--dash-size) + var(--gap-size)) var(--border-weight), var(--dash-size) var(--border-weight), var(--border-weight) var(--dash-size), var(--border-weight) calc(var(--dash-size) + var(--gap-size)), var(--border-weight) var(--dash-size);
+	}
+	i {
+		padding-left: 10px;
+	}
+	&:hover {
+		--border-color: var(--clr-theme-1);
+		background-color: var(--clr-theme-1);
+		color: var(--clr-common-white);
+		--border-weight: 1px;
+		--dash-size: 1px;
+		--gap-size: 2px;
+	}
+	
+}
+.bd-product__cta-btn {
+	--border-color: rgb(81, 92, 78);
+	--border-weight: 2px;
+	--dash-size: 12px;
+	--gap-size: 10px;
+	background-color: transparent;
+	position: relative;
+	display: inline-flex;
+	@include border-radius(6px);
+	overflow: hidden;
+	height: 50px;
+	width: 50px;
+	justify-content: space-evenly;
+	align-items: center;
+	&:after {
+		transition: all .6s ease;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) top center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center left repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) bottom center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center right repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat;
+		background-size: var(--dash-size) var(--border-weight), calc(var(--dash-size) + var(--gap-size)) var(--border-weight), var(--dash-size) var(--border-weight), var(--border-weight) var(--dash-size), var(--border-weight) calc(var(--dash-size) + var(--gap-size)), var(--border-weight) var(--dash-size);
+	}
+	&:hover {
+		--border-color: var(--clr-theme-2);
+		background-color: var(--clr-theme-2);
+		--border-weight: 1px;
+		--dash-size: 1px;
+		--gap-size: 2px;
+	}
+	i {
+		color: var(--clr-text-4);
+		font-size: 20px;
+	}
+}
+// Contact btn
+.bd-contact {
+	&__btn {
+		height: 60px;
+		background: var(--clr-theme-2);
+		padding: 0 40px;
+		@include border-radius(6px);
+		font-size: 16px;
+		font-weight: var(--bd-fw-sbold);
+		&:hover {
+			background-color: var(--clr-theme-1);
+			color: var(--clr-common-white);
+		}
+	}
+}
+// Shop action btn
+.shop-action {
+	&__btn {
+	  display: inline-flex;
+	  height: 40px;
+	  background: var(--clr-theme-1);
+	  align-items: center;
+	  padding: 0 20px;
+	  color: var(--clr-common-white);
+	  font-size: 14px;
+	  @include border-radius(6px);
+	  &:hover {
+		color: var(--clr-common-white);
+		background-color: var(--clr-text-13);
+	  }
+	}
+}
+// Product details btn
+.bd-fill__btn {
+	height: 60px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--clr-theme-2);
+	font-size: 16px;
+	font-weight: var(--bd-fw-sbold);
+	text-transform: uppercase;
+	@include border-radius(6px);
+	@include transition(.3s);
+	padding: 0px 40px;
+	&:hover {
+		background-color: var(--clr-theme-1);
+		color: var(--clr-common-white);
+	}
+}
+.bd-fill__btn-2 {
+	height: 60px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--clr-theme-1);
+	color: var(--clr-common-white);
+	font-size: 16px;
+	font-weight: var(--bd-fw-sbold);
+	text-transform: uppercase;
+	@include border-radius(6px);
+	@include transition(.3s);
+	padding: 0px 40px;
+	&:hover {
+		background-color: var(--clr-theme-2);
+		color: var(--clr-common-body-text);
+	}
+}
+// Services btn
+.bd-services__btn {
+	height: 50px;
+	display: inline-flex;
+	background-color: var(--clr-theme-2);
+	padding: 28px;
+	align-items: center;
+	font-size: 14px;
+	font-weight: var(--bd-fw-sbold);
+	@include  border-radius(6px);
+	text-transform: uppercase;
+	width: 100%;
+	justify-content: center;
+	&:hover {
+		color: var(--clr-common-white);
+		background-color: var(--clr-theme-1);
+	}
+}
+.bd-login__btn {
+	display: inline-flex;
+	height: 60px;
+	background-color: var(--clr-theme-1);
+	align-items: center;
+	padding: 0 45px;
+	color: var(--clr-common-white);
+	font-size: 16px;
+	@include  border-radius(6px);
+	border: 1px solid var(--clr-theme-1);
+	justify-content: space-evenly;
+	font-weight: var(--bd-fw-medium);
+	text-transform: capitalize;
+	@include transition (.3s);
+	justify-content: center;
+	i {
+		padding-right: 7px;
+	}
+	&:hover {
+		background: none;
+		border: 1px solid var(--clr-theme-1);
+		color: var(--clr-theme-1);
+		border-color: var(--clr-theme-1);
+	}
+}

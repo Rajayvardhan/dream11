@@ -1,0 +1,268 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  16. CTA CSS START
+/*----------------------------------------*/
+
+// product cta stle
+.bd-product {
+	&__cta {
+		&-area {
+			position: relative;
+			top: -60px;
+		}
+		&-item {
+			@include flexbox();
+			justify-content: space-between;
+			background: var(--clr-common-body-text);
+			padding: 29px 40px;
+			@include border-radius(6px);
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 20px;
+			@media #{$xl,$lg,$xs,$sm}{
+				padding: 30px 20px;
+			}
+		}
+		&-inner {
+			@include flexbox();
+			align-items: center;
+			gap: 20px;
+		}
+		&-title {
+			h3 {
+			color: var(--clr-common-white);
+			font-size: 24px;
+			@media #{$xl,$sm}{
+			  font-size: 22px;
+			}
+			@media #{$lg,$xs}{
+			  font-size: 18px;
+			}
+			}
+		}
+	}
+}
+// Service Cta Style
+.bd-service {
+	&__cta {
+		&-border {
+			border-top: 1px solid var(--clr-border-1);
+			padding-top: 40px;
+		}
+		&-wrapper {
+			@include flexbox();
+			align-items: center;
+			gap: 50px;
+			flex-wrap: wrap;
+			@media #{$xs,$sm,$md,$lg,$xl}{
+				gap: 30px;
+				margin-bottom: 25px;
+			}
+		}
+		&-content {
+			@include flexbox();
+			align-items: center;
+			gap: 20px;
+			margin-top: -10px;
+			h3 {
+			font-size: 30px;
+				@media #{$xl,$lg,$sm}{
+				font-size: 26px;
+				}
+				@media #{$xs}{
+					font-size: 20px;
+				}
+			}
+		}
+		&-paragraph {
+			max-width: 390px;
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+// Cta style
+.bd-cta {
+	&__shape {
+		position: absolute;
+		z-index: -1;
+		right: 80px;
+		bottom: 60px;
+		@media #{$xs,$sm,$md,$lg}{
+			right: 0;
+		}
+	}
+	&__input {
+		position: relative;
+		z-index: 2;
+		input {
+			width: 100%;
+			height: 60px;
+			border: none;
+			padding-left: 47px;
+			padding-right: 25px;
+			color: var(--clr-common-placeholder-2);
+			@include border-radius(6px);
+			&::placeholder {
+				color: var(--clr-common-placeholder-2);
+			}
+		}
+		i {
+			position: absolute;
+			top: 50%;
+			left: 25px;
+			transform: translateY(-50%);
+		}
+		&-title {
+			font-size: 16px;
+			margin-bottom: 15px;
+		}
+	}
+}
+.bd-contact {
+	&__icon {
+		width: 100px;
+		height: 100px;
+		display: inline-block;
+		line-height: 100px;
+		text-align: center;
+		background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='100' ry='100' stroke='%235B8C51FF' stroke-width='4' stroke-dasharray='12' stroke-dashoffset='86' stroke-linecap='butt'/%3e%3c/svg%3e");
+		border-radius: 100px;
+		min-width: 100px;
+	}
+	&__support {
+		padding: 60px 60px;
+		background-color: var(--clr-common-white);
+		@include box-shadow( 0px 16px 32px 0px rgba(0, 0, 0, 0.06));
+		margin-left: 110px;
+		@include border-radius(6px);
+		margin-top: -135px;
+		@media #{$xl}{
+			margin-left: 50px;  
+		}
+		@media #{$lg}{
+			margin-left: 50px;
+			padding: 60px 30px; 
+		}
+		@media #{$xs,$sm,$md}{
+			margin-left: 0px;
+			margin-top: 0;
+		}
+		@media #{$xs}{
+			padding: 60px 20px;
+		}
+	}
+	&__action {
+		@include flexbox();
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 20px;
+		margin-bottom: 25px;
+	}
+	&__action-text {
+		span {
+			font-size: 14px;
+			color: var(--clr-theme-1);
+		}
+		h3 {
+			a {
+				font-size: 40px;
+				line-height: 1;
+				margin-bottom: 0;
+				@media #{$xl}{
+					font-size: 35px;
+				}
+				@media #{$lg,$sm}{
+					font-size: 30px;
+				}
+				@media #{$xs}{
+					font-size: 24px;
+				}
+				&:hover {
+					color: var(--clr-theme-1);
+				}
+			}
+		}
+	}
+}
+.bd-cta {
+	&__paragraph {
+		font-size: 18px;
+		margin-bottom: 35px;
+	}
+	&__map {
+		@include flexbox();
+		align-items: center;
+		gap: 25px;
+		@media #{$xs}{
+			gap: 16px;
+		}
+		&-title {
+			span {
+				a {
+					font-size: 16px;
+					font-weight: var(--bd-fw-bold);
+					text-transform: uppercase;
+					&:hover {
+						color: var(--clr-theme-1);
+					}
+				}
+			}
+		}
+		&-icon {
+			height: 60px;
+			width: 60px;
+			min-width: 60px;
+			background-color: var(--clr-theme-2);
+			@include flexbox();
+			align-items: center;
+			justify-content: center;
+			font-size: 20px;
+			@include border-radius(6px);
+		}
+	}
+	&__input {
+		&.two {
+			--border-color: var(--clr-footer-1);
+			--border-weight: 2px;
+			--dash-size: 15px;
+			--gap-size: 10px;
+			background-color: transparent;
+			color: var(--clr-footer-1);
+	
+			@include border-radius(6px);
+			overflow: hidden;
+			&:after {
+				transition: all 0.6s ease;
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) top center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center left repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) bottom center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center right repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat;
+				background-size: var(--dash-size) var(--border-weight), calc(var(--dash-size) + var(--gap-size)) var(--border-weight), var(--dash-size) var(--border-weight), var(--border-weight) var(--dash-size), var(--border-weight) calc(var(--dash-size) + var(--gap-size)), var(--border-weight) var(--dash-size);
+				z-index: -1;
+			}
+			input {
+				background: transparent;
+				text-transform: uppercase;
+			}
+			i {
+				color: var(--clr-common-body-text);
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+

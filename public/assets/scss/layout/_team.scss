@@ -1,0 +1,237 @@
+
+@use '../utils' as *;
+
+
+/*----------------------------------------*/
+/*  31.TEAM CSS START
+/*----------------------------------------*/
+
+.bd-team {
+    &__item {
+        background: var(--clr-common-white);
+        @include box-shadow ( 6px -12px 32px 0px rgba(0, 0, 0, 0.06));
+        text-align: center;
+        padding: 60px 75px 55px;
+        @include border-radius(6px);
+        @media #{$xl}{
+            padding: 50px 50px 45px;
+        }
+        @media #{$md,$xs}{
+            padding: 40px 35px 35px;
+        }
+        @media #{$xs}{
+            padding: 40px 25px 35px;
+        }
+        @media #{$lg}{
+            padding: 60px 35px 55px;
+        }
+    }
+    &__img {
+        position: relative;
+        margin-bottom: 35px;
+    }
+    &__content {
+        span {
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: var(--bd-fw-sbold);
+            color: var(--clr-theme-1);
+        }
+        h3 {
+            a {
+                margin-bottom: 4px;
+                font-size: 24px;
+                display: block;
+                &:hover {
+                    color: var(--clr-theme-1);
+                }
+                @media #{$xl,$lg}{
+                    font-size: 22px;
+                }
+                @media #{$xs}{
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    &__social {
+        &-wrapper {
+            position: absolute;
+            top: 50%;
+            @include transform(translateY(-50%));
+            right: -30px;
+            @media #{$xs}{
+                right: -20px;
+            }
+            &:hover{
+                .bd-team__social-link{
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+    &__plus-btn {
+        height: 60px;
+        width: 60px;
+        display: inline-flex;
+        background: var(--clr-common-white);
+        justify-content: center;
+        align-items: center;
+        @include box-shadow(6px -12px 32px 0px rgba(0, 0, 0, 0.06));
+        @include border-radius(50%);
+        @media #{$xs}{
+            height: 50px;
+            width: 50px;
+        }
+        &:hover {
+            background-color: var(--clr-theme-2);
+        }
+        i {
+            font-size: 18px;
+        }
+    }
+    &__social-link {
+        display: flex;
+        gap: 10px;
+        padding-bottom: 10px;
+        padding-right: 23px;
+        position: absolute;
+        right: 0;
+        bottom: 100%;
+        opacity: 0;
+        visibility: hidden;
+        @include transition(.3s);
+        @media #{$sm,$xs}{
+            padding-bottom: 0;
+            padding-right: 10px;
+            right: 100%;
+            bottom: auto;
+            top: 0;
+        }
+        a {
+            height: 60px;
+            width: 60px;
+            display: inline-flex;
+            background: var(--clr-common-white);
+            justify-content: center;
+            align-items: center;
+            @include border-radius(50%);
+            @include box-shadow ( 6px -12px 32px 0px rgba(0, 0, 0, 0.06));
+            &:hover {
+                background-color: var(--clr-theme-2);
+            }
+            @media #{$xs}{
+                width: 50px;
+                height: 50px;
+            }
+            i {
+                font-size: 18px;
+            }
+        }
+    }
+
+}
+.social-link-1 {
+	margin-top: 0px;
+}
+.social-link-2 {
+	margin-top: 10px;
+    @media #{$sm,$xs}{
+        margin-top: 0;
+    }
+}
+.social-link-3 {
+	margin-top: 55px;
+    margin-left: -17px;
+    @media #{$sm,$xs}{
+        margin-top: 0;
+        margin-left: 0;
+    }
+}
+// Team style 2
+.team {
+    &__style-2 {
+        & .bd-team {
+            &__item {
+                border: 2px solid var(--clr-bg-grey-2);
+                @include box-shadow(none);
+            }
+        }
+    }
+}
+// Team founder
+.bd-team {
+    &__founder {
+        &-main {
+            margin-left: 50px;
+            @media #{$xs,$sm,$md,$lg}{
+                margin-left: 0;
+            }
+        }
+        &-thumb {
+            padding-right: 20px;
+            @media #{$xs,$sm,$md}{
+                padding-right: 0;
+            }
+        }
+        &-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        &-item {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            &-icon {
+                width: 50px;
+                height: 50px;
+                background: var(--clr-common-white);
+                display: inline-flex;
+                align-items: center;
+                justify-content: space-evenly;
+                border-radius: 6px;
+                color: var(--clr-theme-1);
+                box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.024);
+            }
+        }
+        &-text {
+            .contact {
+                font-weight: var(--bd-fw-bold);
+                font-size: 20px;
+            }
+            .title {
+                font-size: 14px;
+                color: var(--clr-text-10);
+            }
+        }
+    }
+}
+// Acivement Style
+.bd-archivement {
+    &__box{
+        padding-left: 50px;
+        @media #{$lg} {
+            padding-left: 30px;
+        }
+        @media #{$xs,$sm,$md,$lg} {
+            padding-left: 0px;
+        }
+    }
+    &__title h3 {
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+    &__title {
+        p {
+            margin-bottom: 33px;
+            font-size: 18px;
+            color: var(--clr-text-2);
+            @media #{$lg}{
+                font-size: 16px;
+            }
+        }
+    }
+}

@@ -1,0 +1,116 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  12. ACCORDIONG CSS START
+/*----------------------------------------*/
+
+
+// Accordiong style
+.bd-faq {
+	&__wrapper {
+		padding-right: 10px;
+		@media #{$xs,$sm,$md,$lg}{
+			padding-right: 0px;
+		}
+		&-2{
+			padding-left: 10px;
+			@media #{$xs,$sm,$md,$lg}{
+				padding-left: 0px;
+			}
+		}
+	}
+	&__accordion {
+		.accordion-button {
+			padding: 19px 30px 19px;
+			font-weight: var(--bd-fw-sbold);
+			border: 0;
+			@include border-radius(6px);
+			font-family: var(--bd-ff-heading);
+			text-transform: uppercase;
+			font-weight: var(--bd-fw-bold);
+			font-size: 18px;
+			color: var(--clr-common-body-text);
+			background: transparent;
+			@media #{$xs}{
+				padding: 19px 20px 19px;
+				font-size: 16px;
+			}
+			&:focus {
+				z-index: 3;
+				border: none;
+				outline: 0;
+				box-shadow: none;
+			}
+			&:not(.collapsed) {
+				color: var(--clr-common-body-text);
+				content: "";
+				background: transparent;
+				box-shadow: none;
+				border: 0;
+			}
+			&:not(.collapsed)::after {
+				background: none;
+				@include transform(rotate(180deg));
+				content: "";
+				position: absolute;
+				right: 30px;
+				top: 25px;
+				font-family: var(--bd-ff-fontawesome);
+				@media #{$xs} {
+					right: 15px;
+				}
+			}
+			&::after {
+				background: none;
+				color: var(--clr-theme-1);
+				content: "\f067";
+				position: absolute;
+				right: 20px;
+				top: 50%;
+				@include transform(translateY(-50%));
+				font-family: var(--bd-ff-fontawesome);
+				font-weight: 400;
+				@include transition(0.3s);
+				@media #{$xs} {
+					right: 15px;
+				}
+			}
+		}
+		.accordion-item {
+			border: 1px solid rgba(255,255,255,.0);
+			--border-color: var(--clr-theme-1);
+			--border-weight: 2px;
+			--dash-size: 18px;
+			--gap-size: 6px;
+			background: transparent;
+			position: relative;
+			margin-bottom: 20px;
+			@include border-radius(6px);
+			overflow: hidden;
+			&::after {
+				transition: all 0.6s ease;
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) top center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top left no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center left repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom left no-repeat, linear-gradient(90deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) bottom center repeat-x, linear-gradient(90deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) top right no-repeat, linear-gradient(0deg, transparent calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2), var(--border-color) calc(var(--gap-size) / 2 + var(--dash-size)), transparent calc(var(--gap-size) / 2 + var(--dash-size))) center right repeat-y, linear-gradient(0deg, var(--border-color) 100%, transparent 100%) bottom right no-repeat;
+				background-size: var(--dash-size) var(--border-weight), calc(var(--dash-size) + var(--gap-size)) var(--border-weight), var(--dash-size) var(--border-weight), var(--border-weight) var(--dash-size), var(--border-weight) calc(var(--dash-size) + var(--gap-size)), var(--border-weight) var(--dash-size);
+				z-index: -1;
+			}
+		}
+		.accordion-collapse {
+			border: 0;
+		}
+		.accordion-body {
+			padding: 0px 25px 20px 25px;
+			margin-top: -10px;
+			p {
+				line-height: 26px;
+				margin-bottom: 0;
+				margin-top: 3px;
+			}
+		}
+	}
+}
